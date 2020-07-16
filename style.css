@@ -7,10 +7,21 @@ body {
   width: auto;
   background-color: antiquewhite;
   font-size: 20px;
-  border: solid;
-  padding: 50px;
+  /* border: solid; */
   margin: 40px;
   font-family: "Montserrat", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: black; /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: antiquewhite; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid black; /* creates padding around scroll thumb */
 }
 
 h1 {
@@ -43,11 +54,29 @@ ul {
 li {
   font-size: 0.75em;
   padding: 20px;
-  height: fit-content;
   border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   background-color: #eed7c5;
-  height: 40px;
+  height: 65px;
   margin: 10px 0;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+li::-webkit-scrollbar {
+  width: 5px;
+  /* width of the entire scrollbar */
+}
+li::-webkit-scrollbar-track {
+  background: #eed7c5; /* color of the tracking area */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+li::-webkit-scrollbar-thumb {
+  background-color: black; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  /* border: 3px solid black;  creates padding around scroll thumb */
 }
 li:nth-child(even) {
   background-color: #e8d2ae;
@@ -61,15 +90,8 @@ li:hover {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
-}
-
-.todoList,
-.finishedList {
-  display: flex;
-  align-items: center;
-  max-width: 700px;
-  width: 600px;
-  border-radius: 20px;
+  margin-left: AUTO;
+  margin-right: AUTO;
 }
 
 button {
@@ -87,11 +109,12 @@ button:hover {
 }
 
 input {
-  /* width: 80%; */
+  width: 100%;
   height: 60px;
   border-radius: 20px;
   flex-grow: 2;
   padding-left: 20px;
+  padding-right: 60px;
   border: 0;
   outline: none;
 }
@@ -102,10 +125,14 @@ input:focus {
   box-shadow: 0 5px 5px grey;
 }
 
-/*TO DO LIST*/
-.doneBox {
-  padding-top: 50px;
+.ListContainer{
+  border: solid;
+  padding: 50px;
+  font-family: "Montserrat", sans-serif;
+  height:100vh;
 }
+
+/*TO DO LIST*/
 
 #todoList button,
 #finishedList button {

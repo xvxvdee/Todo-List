@@ -8,7 +8,9 @@ document.getElementById("add").addEventListener("click", function () {
   } else {
     let task = document.createElement("li");
     task.setAttribute("id", "false");
-    task.innerText = inputVal;
+    task.innerHTML = `${inputVal}<br>`;
+
+    let container = document.createElement("span");
 
     let finish = document.createElement("button");
     finish.setAttribute("id", "done");
@@ -22,10 +24,13 @@ document.getElementById("add").addEventListener("click", function () {
     remove.setAttribute("onclick", "removeTask()");
     remove.innerHTML = `<img class ="responsive" src="trash.svg">`;
 
-    task.appendChild(finish);
-    task.appendChild(remove);
-
+    // containerOne.appendChild(task);
+    container.appendChild(finish);
+    container.appendChild(remove);
+    task.appendChild(container);
     list.appendChild(task);
+    // list.appendChild(containerTwo);
+
   }
   document.getElementById("task").value = "";
 });
@@ -55,10 +60,14 @@ function completedTask() {
     li.appendChild(remove);
     list.appendChild(li);
   } else {
-    // console.log("NOT THERE");
+
     list.removeChild(li);
     let completeTask = document.createElement("li");
-    completeTask.innerHTML = `<del>${li.innerText}</del>`;
+    let wordBox = document.createElement("span");
+    wordBox.setAttribute("id","box");
+    wordBox.innerHTML = `<del>${li.innerText}<br></del>`;
+ 
+    let container = document.createElement("span");
 
     let finish = document.createElement("button");
     finish.setAttribute("id", "done");
@@ -72,8 +81,14 @@ function completedTask() {
     remove.setAttribute("onclick", "removeTask()");
     remove.innerHTML = `<img class ="responsive" src="trash.svg">`;
 
-    completeTask.appendChild(finish);
-    completeTask.appendChild(remove);
+    // completeTask.appendChild(finish);
+    // completeTask.appendChild(remove);
+    container.appendChild(finish);
+    container.appendChild(remove);
+    completeTask.appendChild(wordBox);
+    completeTask.appendChild(container);
+
+    // done.appendChild(completeTask);
 
     done.appendChild(completeTask);
   }
