@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga&family=Courgette&family=Montserrat:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>TO-DO LIST</title>
+  </head>
+  <body>
+    <section class="ListContainer">
+      <div class="todoBox">
+        <div class="listBox">
+        <input name="newItem" id="task" placeholder=" Enter a task" /><span>
+          <button type="button" id="add"><img src="add-outline.svg" /></button
+        ></span>
+      </div>
+      <h2>To-Do List<hr/></h2>
+        <ul id="todoList"></ul>
+      </div>
+      <div class="doneBox">
+        <h2>
+          Completed
+          <hr />
+        </h2>
+        <ul id="finishedList"></ul>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
